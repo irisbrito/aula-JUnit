@@ -27,4 +27,11 @@ public class AgilTest {
 
         Assert.assertEquals("Horas negativas não são aceitas", erro.getMessage());
     }
+
+    @Test
+    public void testarValidacaoDeNumeroPositivoCasoPositivo(){
+        Agil agil = new Agil();
+
+        Assert.assertFalse(agil.validarNumerosPositivos(-1));
+    }
 }
