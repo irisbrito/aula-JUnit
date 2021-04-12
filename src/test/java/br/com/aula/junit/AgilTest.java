@@ -7,10 +7,13 @@ public class AgilTest {
 
     @Test
     public void testarOCalculoCorretoDePert(){
+        double horasDificeis = 3, horasNormais = 3, horasFaceis =3;
+        double esperado = (horasDificeis +  horasNormais + horasFaceis)/6;
+
         Agil agil = new Agil();
 
         double resultado = agil.calcularPert(3,3, 3);
 
-        Assert.assertEquals(1.5, resultado, 0.004);
+        Assert.assertEquals(esperado, resultado, 0.004);
     }
 }
