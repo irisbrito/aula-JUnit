@@ -1,16 +1,22 @@
 package br.com.aula.junit;
 
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
 
 public class AgilTest {
+
+    private Agil agil;
+
+    @Before
+    public void setup(){
+        this.agil = new Agil();
+    }
 
     @Test
     public void testarOCalculoCorretoDePert(){
         double horasDificeis = 3, horasNormais = 3, horasFaceis =3;
         double esperado = (horasDificeis +  horasNormais + horasFaceis)/6;
-
-        Agil agil = new Agil();
 
         double resultado = agil.calcularPert(3,3, 3);
 
@@ -19,8 +25,6 @@ public class AgilTest {
 
     @Test
     public void testarValidacaoDeNumerosNegativosParaHorasNoCalculoDePert(){
-        Agil agil = new Agil();
-
         Exception erro = Assert.assertThrows(RuntimeException.class, () -> {
             agil.calcularPert(4,-3,1);
         } );
@@ -30,8 +34,6 @@ public class AgilTest {
 
     @Test
     public void testarValidacaoDeNumeroPositivoCasoPositivo(){
-        Agil agil = new Agil();
-
         Assert.assertFalse(agil.validarNumerosPositivos(-1));
     }
 }
