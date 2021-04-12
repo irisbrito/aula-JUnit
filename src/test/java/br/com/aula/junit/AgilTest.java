@@ -21,8 +21,10 @@ public class AgilTest {
     public void testarValidacaoDeNumerosNegativosParaHorasNoCalculoDePert(){
         Agil agil = new Agil();
 
-        Assert.assertThrows(RuntimeException.class, () -> {
+        Exception erro = Assert.assertThrows(RuntimeException.class, () -> {
             agil.calcularPert(4,-3,1);
         } );
+
+        Assert.assertEquals("Horas negativas não são aceitas", erro.getMessage());
     }
 }
