@@ -16,4 +16,13 @@ public class AgilTest {
 
         Assert.assertEquals(esperado, resultado, 0.004);
     }
+
+    @Test
+    public void testarValidacaoDeNumerosNegativosParaHorasNoCalculoDePert(){
+        Agil agil = new Agil();
+
+        Assert.assertThrows(RuntimeException.class, () -> {
+            agil.calcularPert(4,-3,1);
+        } );
+    }
 }
