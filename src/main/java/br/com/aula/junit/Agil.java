@@ -10,4 +10,12 @@ public class Agil {
         double resultado = (horasDificeis + horasNormais + horasFaceis) / 6;
         return resultado;
     }
+
+    public boolean validarNumerosPositivos(double numero){
+        if(numero >= 0){
+            return true;
+        }
+
+        return false;
+    }
 }
