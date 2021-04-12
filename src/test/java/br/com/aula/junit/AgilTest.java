@@ -34,6 +34,11 @@ public class AgilTest {
 
     @Test
     public void testarValidacaoDeNumeroPositivoCasoPositivo(){
-        Assert.assertFalse(agil.validarNumerosPositivos(-1));
+        Assert.assertTrue(agil.validarNumerosPositivos(10));
+    }
+
+    @Test
+    public void testarValidacaoDeNumeroPositivoCasoNegativo(){
+        Assert.assertFalse(agil.validarNumerosPositivos(-2));
     }
 }
